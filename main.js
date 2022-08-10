@@ -1,4 +1,4 @@
-class ToList {
+class List {
     constructor(){
         this.data = []
     }
@@ -9,8 +9,20 @@ class ToList {
     }
 }
 
+class ToList extends List {
+    constructor(){
+        super()
+        this.usuario = 'William'
+    }
+
+    getUsuario(){
+        console.log(this.usuario)
+    }
+}
+
 const tolist = new ToList()
 
 document.getElementById('novotodo').onclick = function () {
     tolist.add('will')
+    tolist.getUsuario()
 }
