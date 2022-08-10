@@ -36,3 +36,14 @@ const find = arr.find(function(item){
 })
 
 console.log(find)
+
+/* Arrow Functions - diminui a verbosidade do código */
+
+// representa o mesmo map efetuado no início do código
+const arrowArr = arr.map((item) => item*2)
+console.log(arrowArr)
+
+const teste = () => {
+    return {nome: 'Will'}
+}
+console.log(teste())
