@@ -47,3 +47,13 @@ const teste = () => {
     return {nome: 'Will'}
 }
 console.log(teste())
+
+/* Parametros default */
+
+function somador(a=2, b=3){
+    return a+b
+}
+
+console.log(somador(6,5))
+console.log(somador(3))
+console.log(somador())
