@@ -9,7 +9,7 @@ class List {
     }
 }
 
-// Classe com Herança
+/* Classe com Herança */
 
 class ToList extends List {
     constructor(){
