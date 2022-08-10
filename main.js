@@ -1,75 +1,38 @@
-class List {
-    constructor(){
-        this.data = []
-    }
+const arr = [1,2,3,4,6,8,9]
 
-    add(nome){
-        this.data.push(nome)
-        console.log(this.data)
-    }
-}
+/* Função map - mapeia todos os elementos do array, podendo realizar
+operações sobre cada um deles */
 
-// Classe com Herança
+const newArr = arr.map(function(item){
+    return item * 2
+})
 
-class ToList extends List {
-    constructor(){
-        super()
-        this.usuario = 'William'
-    }
+console.log(arr)
+console.log(newArr)
 
-    getUsuario(){
-        console.log(this.usuario)
-    }
+/* Função reduce - reduz o array a um unico elemento, resultante da
+iteração de todos os elementos do array */
+const soma = arr.reduce(function(total, next){
+    return total + next
+})
 
-    static soma(a,b){
-        return a+b
-    }
-}
+console.log(soma)
 
-const tolist = new ToList()
+/* Função filter - filtra os elementos do array, mantendo apenas
+os que forem de acordo com a condição definida */
 
-document.getElementById('novotodo').onclick = function () {
-    tolist.add('will')
-    tolist.getUsuario()
-}
+// retorna os elementos pares do array
+const filter = arr.filter(function(item){
+    return item % 2 == 0
+})
 
-/* Usando de métodos estáticos */
+console.log(filter)
 
-console.log('Soma com metodo estatico:')
-console.log(ToList.soma(1,2))
+/* Função find - busca um elemento no array */
 
-/* Tipos de variaveis */
+// retorna o elemento ou 'undefined' caso não o encontre
+const find = arr.find(function(item){
+    return item === 7
+})
 
-// Não pode ser modificada
-const nome = 'Will' 
-
-// Variavel global
-var glob = 10 
-
-// É visível apenas no escopo da função em que foi definida
-let loc = 2
-
-/* Exemplo com variavel const */
-
-const user = {nome: 'Will', idade: 20}
-
-// É possível alterar o valor de uma propriedade, mas nao a estrutura de 'user'
-console.log(user)
-user.idade = 21
-console.log(user)
-
-/* Exemplo com variavel local */
-
-function teste(x){
-    let y = 4
-    if(x>2){
-        y = 6
-    }
-    console.log('dentro da função teste, y:')
-    console.log(y)
-} 
-
-teste(5)
-
-console.log('fora da função teste, y:')
-console.log(y)
+console.log(find)
